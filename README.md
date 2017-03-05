@@ -6,6 +6,12 @@ don't know about this small exchange so I wrote something to track prices by
 scraping its website, and providing some CSV data on current prices, moving
 averages, and sparklines.
 
+# Initial install
+
+```
+yarn install --offline
+```
+
 # Create initial database
 
 ```sh
@@ -29,6 +35,26 @@ scripts/convert.pl data/CRQ_raw.csv > data/CRQ.csv
 # import into database
 scripts/import-csv.sh data/CLU.csv CLU 'iSHARES US FUNDAMENTAL INDEX ETF'
 scripts/import-csv.sh data/CRQ.csv CRQ 'iSHARES CANADIAN FUNDAMENTAL INDEX ETF'
+```
+
+# Start the app
+
+```
+# start for the first time
+./node_modules/.bin/pm2 start app.js
+
+# make pm2 remember to run the app
+./node_modules/.bin/pm2 save
+
+# install with systemd - follow instructions
+./node_modules/.bin/pm2 startup system
+```
+
+# Set up scheduled requests
+
+```
+# .cron extension inside of cron.d will make cron ignore the file!
+sudo cp neo-tracker.cron /etc/cron.d/neo-tracker
 ```
 
 # Routes

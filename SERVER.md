@@ -53,6 +53,7 @@ iptables-persistent
 nginx
 letsencrypt
 git # already, apparently
+sqlite3
 ```
 
 ## not done
