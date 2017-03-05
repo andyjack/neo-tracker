@@ -6,9 +6,9 @@ const port = process.env.PORT || 3000;
 
 process.env.PATH = `${process.env.PATH}:./node_modules/.bin`;
 
-app.use('/current', require('./routes/current'));
-app.use('/sparkline', require('./routes/sparkline'));
-app.use('/update', require('./routes/update'));
+app.use('/app/current', require('./routes/current'));
+app.use('/app/sparkline', require('./routes/sparkline'));
+app.use('/app/update', require('./routes/update'));
 
 async function main() {
   db.startup()
