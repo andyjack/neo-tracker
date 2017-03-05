@@ -1,0 +1,17 @@
+{
+  "name": "neo-query.git",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Andy Jack <github@veracity.ca>",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.4.7",
+    "csv-stringify": "^1.0.4",
+    "express": "^4.14.1",
+    "gulp": "^3.9.1",
+    "phantomjs-prebuilt": "^2.1.14",
+    "pm2": "^2.4.2",
+    "selenium-webdriver": "^3.1.0",
+    "sqlite": "^2.3.0"
+  }
+}
