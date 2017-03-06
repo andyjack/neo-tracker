@@ -1,0 +1,5 @@
+# do update/current once an hour from 10am to 4pm, sleeping up to 50 minutes beforehand.
+# at 6pm, do the daily update.
+# vim:ft=crontab
+0 10-16 * * 1-5     nobody    perl -le 'sleep rand 3000' && curl --silent --insecure --request POST https://localhost/app/update/current >/dev/null
+0 18    * * 1-5     nobody    curl --silent --insecure --request POST https://localhost/app/update/daily >/dev/null
