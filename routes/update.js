@@ -90,7 +90,7 @@ function getPrices(rows) {
       .catch(
           err => { const r = row; r.err = err; return r }
       )
-  );
+  ).then( prices => { return driver.quit().then( () => prices ) } );
 }
 
 module.exports = router;
