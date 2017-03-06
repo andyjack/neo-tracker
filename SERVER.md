@@ -78,7 +78,9 @@ will this ever work?
 
 https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04
 
-- haven't set up letsencrypt autorenew yet!
+```
+sudo cp cron/letsencrypt-renew /etc/cron.d
+```
 
 # node
 
@@ -86,6 +88,5 @@ https://nvm.sh - want node >=7.6.0
 
 nvm install v7.7.1
 npm install -g yarn
-
 
 https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-16-04

@@ -1,0 +1,4 @@
+# renew letsencrypt
+# vim:ft=crontab
+30 2 * * 1 root /usr/bin/letsencrypt renew >> /var/log/le-renew.log
+35 2 * * 1 root /bin/systemctl reload nginx

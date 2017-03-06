@@ -54,7 +54,7 @@ scripts/import-csv.sh data/CRQ.csv CRQ 'iSHARES CANADIAN FUNDAMENTAL INDEX ETF'
 
 ```
 # .cron extension inside of cron.d will make cron ignore the file!
-sudo cp neo-tracker.cron /etc/cron.d/neo-tracker
+sudo cp cron/neo-tracker /etc/cron.d/neo-tracker
 ```
 
 # Routes
@@ -83,7 +83,10 @@ sudo cp neo-tracker.cron /etc/cron.d/neo-tracker
 
 # Some TODO
 
-* set up letsencrypt auto renewal
+* more server maintenance stuff:
+  * etckeeper
+  * logwatch
+  * cheesy letsencrypt renewal replaced with certbot-auto
 
 # Development
 
