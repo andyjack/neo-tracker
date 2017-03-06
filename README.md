@@ -83,9 +83,7 @@ sudo cp neo-tracker.cron /etc/cron.d/neo-tracker
 
 # Some TODO
 
-* crontab for POSTing `/update` route requests from time to time
-* nginx or app denies POST requests except from localhost
-* nginx 404's all / requests
+* set up letsencrypt auto renewal
 
 # Development
 
