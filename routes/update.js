@@ -7,7 +7,7 @@ const By = require('selenium-webdriver').By;
 const Key = require('selenium-webdriver').Key;
 const webdriver = require('selenium-webdriver');
 
-const baseUri = 'https://aequitasneoexchange.com/en/security-detail'
+const baseUri = 'https://www.aequitasneo.com/en/single-security';
 
 router.post('/current',
   async (req, res, next) => {
@@ -77,15 +77,12 @@ function getPrices(rows) {
   // https://aequitasneoexchange.com/en/trading/trading-solutions/neo-book/
 
   return Promise.each(rows,
-    row => driver.get(baseUri + `?q=${row.symbol}`)
+    row => driver.get(baseUri + `/${row.symbol}`)
       .then(
-        () => driver.findElement(By.css('td.quote-summary-lastSalePrice'))
+        () => driver.executeScript(`return document.querySelector('#securityLastSalePrice').innerText`)
       )
       .then(
-        el => el.getText()
-      )
-      .then(
-        text => { const r = row; r.price = text; return r }
+        text => { const r = row; r.price = text.replace(/\$/,''); return r }
       )
       .catch(
           err => { const r = row; r.err = err; return r }

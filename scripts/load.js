@@ -7,9 +7,9 @@ const webdriver = require('selenium-webdriver');
 const driver = new webdriver.Builder().forBrowser('phantomjs').build();
 const fs = require('fs');
 
-driver.get('https://aequitasneoexchange.com/en/security-detail?q=clu');
-driver.findElement(By.css('td.quote-summary-lastSalePrice'))
-  .getText().then(text => { console.log(`${text}`) });
+driver.get('https://www.aequitasneo.com/en/single-security/CLU');
+driver.executeScript(`return document.querySelector('#securityLastSalePrice').innerText`)
+  .then(text => { console.log(`${text.replace(/\$/,'')}`) });
 
 /*
  *driver.takeScreenshot().then(function(data){
