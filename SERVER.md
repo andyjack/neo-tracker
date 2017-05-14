@@ -78,8 +78,23 @@ will this ever work?
 
 https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04
 
+Instead of xenial letsencrypt, use certbot:
+
+https://certbot.eff.org/#ubuntuxenial-nginx
+
 ```
 sudo cp cron/letsencrypt-renew /etc/cron.d
+```
+
+History for initial cert & renewal:
+
+```
+letsencrypt certonly -a webroot --webroot-path=/var/www/html -d HOSTNAME
+```
+
+Same as what's in the cron/letsencrypt-renew script
+```
+/usr/bin/certbot renew --webroot --webroot-path=/var/www/html --pre-hook "service nginx stop" --post-hook "service nginx start"
 ```
 
 # node

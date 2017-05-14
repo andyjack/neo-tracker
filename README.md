@@ -86,7 +86,7 @@ sudo cp cron/neo-tracker /etc/cron.d/neo-tracker
 * more server maintenance stuff:
   * etckeeper
   * logwatch
-  * cheesy letsencrypt renewal replaced with certbot-auto
+  * backing up the sqlite file
 
 # Development
 

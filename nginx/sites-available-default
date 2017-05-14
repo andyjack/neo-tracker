@@ -17,7 +17,24 @@ server {
 	listen 80 default_server;
 	listen [::]:80 default_server;
     	server_name HOSTNAME;
-        return 301 https://$server_name$request_uri;
+
+	root /var/www/html;
+
+	location / {
+		# First attempt to serve request as file, then
+		# as directory, then fall back to displaying a 404.
+		#try_files $uri $uri/ =404;
+
+		# want everything to 404
+		return 404;
+	}
+
+	# for letsencrypt.  Andy 2017-Mar-02
+        location ~ /.well-known {
+                allow all;
+        }
+
+        #return 301 https://$server_name$request_uri;
 }
 
 map $remote_addr $allowed_ip {
