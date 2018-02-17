@@ -37,6 +37,18 @@ scripts/import-csv.sh data/CLU.csv CLU 'iSHARES US FUNDAMENTAL INDEX ETF'
 scripts/import-csv.sh data/CRQ.csv CRQ 'iSHARES CANADIAN FUNDAMENTAL INDEX ETF'
 ```
 
+# Import AlphaVantage data
+
+Create a file containing your AlphaVantage api key:
+```
+echo "ABC123" > alpha_vantage_key.txt
+```
+
+```
+export APIKEY=$(cat alpha_vantage_key.txt)
+scripts/import-from-alphavantage.sh $APIKEY "SPDR Sector XLK" XLK
+```
+
 # Start the app
 
 ```

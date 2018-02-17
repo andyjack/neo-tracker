@@ -2,22 +2,41 @@ const Promise = require('bluebird');
 const express = require('express');
 const router  = express.Router();
 const sqlite = require('../lib/db').sqlite;
-
-const By = require('selenium-webdriver').By;
-const Key = require('selenium-webdriver').Key;
-const webdriver = require('selenium-webdriver');
-
-const baseUri = 'https://www.aequitasneo.com/en/single-security';
+const getPrices = require('../lib/getPrices');
 
 router.post('/current',
   async (req, res, next) => {
     try {
-      sqlite().all(
-        'SELECT stock_id,symbol FROM stock WHERE fetch_updates = ?',
+      await sqlite().all(
+        `SELECT stock_id,symbol,service.name AS service_name
+          FROM stock
+          JOIN stock_service USING (stock_id)
+          JOIN service USING (service_id)
+          WHERE fetch_updates = ?`,
         1
       )
       // TODO what if no rows, reject
-      .then( rows => getPrices(rows) )
+      .then(rows => {
+        const serviceRows = {};
+        for (let r of rows) {
+          serviceRows[r.service_name] = serviceRows[r.service_name] || [];
+          serviceRows[r.service_name].push(r);
+        }
+        const priceTodo = [];
+        Object.keys(serviceRows).forEach(
+          k => priceTodo.push( getPrices[k](serviceRows[k]) )
+        );
+        return Promise.all(priceTodo);
+      })
+      .then(servicePrices => {
+        const priceRows = [];
+        for (let sp of servicePrices) {
+          for (let e of sp) {
+            priceRows.push(e);
+          }
+        }
+        return priceRows;
+      })
       // TODO what if all errors, reject, log?
       .then( prices => {
         sqlite().prepare('REPLACE INTO current_price (stock_id,price,time) VALUES (?,?,datetime(?))')
@@ -49,7 +68,7 @@ router.post('/current',
 router.post('/daily',
   async (req, res, next) => {
     try {
-      sqlite().run(
+      await sqlite().run(
         'INSERT OR IGNORE INTO daily_price (stock_id,price,date) ' +
         'SELECT stock_id,price,date(?) FROM current_price ' +
         '  WHERE date(time) = date(?)',
@@ -63,31 +82,5 @@ router.post('/daily',
     }
   }
 );
-
-function getPrices(rows) {
-  if ( rows.length === 0 ) {
-    return Promise.resolve([]);
-  }
-  const lookup = {};
-  const driver = new webdriver.Builder().forBrowser('phantomjs').build();
-
-  // There are two prices for the stock, one is LIT and the other is NEO.
-  // Not sure what one I want, so using the default shown on the page, LIT.
-  // https://aequitasneoexchange.com/en/trading/trading-solutions/lit-book/
-  // https://aequitasneoexchange.com/en/trading/trading-solutions/neo-book/
-
-  return Promise.each(rows,
-    row => driver.get(baseUri + `/${row.symbol}`)
-      .then(
-        () => driver.executeScript(`return document.querySelector('#securityLastSalePrice').innerText`)
-      )
-      .then(
-        text => { const r = row; r.price = text.replace(/\$/,''); return r }
-      )
-      .catch(
-          err => { const r = row; r.err = err; return r }
-      )
-  ).then( prices => { return driver.quit().then( () => prices ) } );
-}
 
 module.exports = router;

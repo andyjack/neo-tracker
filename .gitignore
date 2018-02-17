@@ -1,3 +1,4 @@
 *.sqlite
 node_modules
 yarn-error.log
+alpha_vantage_key.txt

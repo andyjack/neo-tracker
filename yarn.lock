@@ -1376,6 +1376,10 @@ moment-timezone@^0.5.x:
   version "2.17.1"
   resolved moment-2.17.1.tgz#fed9506063f36b10f066c8b59a144d7faebe1d82
 
+moment@^2.20.1:
+  version "2.20.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.20.1.tgz#d6eb1a46cbcc14a2b2f9434112c1ff8907f313fd"
+
 ms@0.7.1:
   version "0.7.1"
   resolved ms-0.7.1.tgz#9cd13c03adbff25b65effde7ce864ee952017098
@@ -1401,6 +1405,10 @@ natives@^1.1.0:
 negotiator@0.6.1:
   version "0.6.1"
   resolved negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9
+
+node-fetch@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.0.0.tgz#982bba43ecd4f2922a29cc186a6bbb0bb73fcba6"
 
 node-pre-gyp@^0.6.29, node-pre-gyp@~0.6.31:
   version "0.6.33"
