@@ -11,10 +11,15 @@ app.use('/app/all', require('./routes/all'));
 app.use('/app/sparkline', require('./routes/sparkline'));
 app.use('/app/update', require('./routes/update'));
 
-app.use((err, req, res) => {
+app.use((err, req, res, next) => {
   // eslint-disable-next-line no-console
   console.error(err.stack);
-  res.status(500).send('kablooie!');
+  if (res.headersSent) {
+    next(err);
+    return;
+  }
+  res.status(500);
+  res.send('kablooie!');
 });
 
 async function main() {
