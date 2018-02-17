@@ -7,6 +7,7 @@ const port = process.env.PORT || 3000;
 process.env.PATH = `${process.env.PATH}:./node_modules/.bin`;
 
 app.use('/app/current', require('./routes/current'));
+app.use('/app/all', require('./routes/all'));
 app.use('/app/sparkline', require('./routes/sparkline'));
 app.use('/app/update', require('./routes/update'));
 app.use(function (err, req, res, next) {
