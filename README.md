@@ -69,6 +69,7 @@ scripts/import-from-alphavantage.sh $APIKEY "SPDR Sector XLK" XLK
 mkdir backups
 
 # .cron extension inside of cron.d will make cron ignore the file!
+# check that the username and path to the sqlite3-backup.sh script are correct!
 sudo cp cron/neo-tracker /etc/cron.d/neo-tracker
 ```
 
