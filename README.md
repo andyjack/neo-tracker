@@ -65,6 +65,9 @@ scripts/import-from-alphavantage.sh $APIKEY "SPDR Sector XLK" XLK
 # Set up scheduled requests
 
 ```
+# make the backup dir for the database
+mkdir backups
+
 # .cron extension inside of cron.d will make cron ignore the file!
 sudo cp cron/neo-tracker /etc/cron.d/neo-tracker
 ```
@@ -98,7 +101,6 @@ sudo cp cron/neo-tracker /etc/cron.d/neo-tracker
 * more server maintenance stuff:
   * etckeeper
   * logwatch
-  * backing up the sqlite file
 
 # Development
 
