@@ -4,4 +4,4 @@
 # vim:ft=crontab
 0 10-16 * * 1-5     nobody    perl -le 'sleep rand 3000' && curl --silent --insecure --request POST https://localhost/app/update/current >/dev/null
 0 18    * * 1-5     nobody    curl --silent --insecure --request POST https://localhost/app/update/daily >/dev/null
-0 0     * * 1-5     andy      /home/andy/neo-tracker/scripts/sqlite3-backup.sh
+55 23   * * 1-5     andy      /home/andy/neo-tracker/scripts/sqlite3-backup.sh
