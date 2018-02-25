@@ -1,5 +1,6 @@
 const Promise = require('bluebird');
 const express = require('express');
+const moment = require('moment');
 
 const router = express.Router();
 const { sqlite } = require('../lib/db');
@@ -11,6 +12,25 @@ function outputRows(res, rows) {
   res.type('csv');
   return stringify(output).then(str => res.send(str));
 }
+
+function secondsTo605pm(now) {
+  const sixPm = now.clone().startOf('day').add(18, 'hours').add(5, 'minutes');
+  if (sixPm.isBefore(now)) {
+    sixPm.add(1, 'day');
+  }
+  return sixPm.diff(now, 'seconds');
+}
+
+// Always add a Cache-Control header with a max-age that ends at the next
+// upcoming 6:05pm.  This is because the prices in current_price are copied to
+// daily_price at 6:00pm;  The extra 5 minutes is so copy has enough time to
+// finish before the max-age resets back to the maximum.
+router.use((req, res, next) => {
+  res.set({
+    'Cache-Control': `max-age=${secondsTo605pm(moment())}`,
+  });
+  next();
+});
 
 router.get(
   '/month/:symbol',

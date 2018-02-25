@@ -103,8 +103,6 @@ sudo cp cron/neo-tracker /etc/cron.d/neo-tracker
   * etckeeper
   * logwatch
 * authentication middleware
-* cache header for sparklines, since the underlying data changes at most
-  once/day
 
 # Development
 
