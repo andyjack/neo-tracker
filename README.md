@@ -87,6 +87,13 @@ sudo cp cron/neo-tracker /etc/cron.d/neo-tracker
   past month for the given symbol
 * `/sparkline/year/SYMBOL` - returns as CSV, date and closing price for the
   past year (Mondays only) for the given symbol
+* `/all` - returns as CSV, the following, for all tracked symbols:
+  1. symbol
+  1. 52-week low
+  1. 52-week high
+  1. 50-day MA
+  1. 200-day MA
+  1. current price
 
 ## POST
 
