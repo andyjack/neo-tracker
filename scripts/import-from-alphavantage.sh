@@ -22,7 +22,7 @@ ID=$(echo "$SQL" | sqlite3 database.sqlite)
 echo $ID
 
 read -r -d '' SQL <<_EOF_
-INSERT INTO daily_price (stock_id,date,price) SELECT $ID,timestamp,close FROM temp WHERE price > 0;
+INSERT INTO daily_price (stock_id,date,price) SELECT $ID,timestamp,close FROM temp WHERE close > 0;
 --DROP TABLE IF EXISTS temp;
 _EOF_
 
