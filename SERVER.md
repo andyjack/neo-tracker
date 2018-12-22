@@ -54,6 +54,7 @@ nginx
 letsencrypt
 git # already, apparently
 sqlite3
+chromium-browser
 ```
 
 ## not done
