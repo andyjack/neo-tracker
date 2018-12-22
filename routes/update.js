@@ -1,4 +1,3 @@
-const Promise = require('bluebird');
 const express = require('express');
 
 const router = express.Router();
@@ -39,13 +38,14 @@ router.post('/current', async (req, res, next) => {
         return priceRows;
       })
       // TODO what if all errors, reject, log?
-      .then(prices => {
+      .then(prices =>
         sqlite()
           .prepare(
             'REPLACE INTO current_price (stock_id,price,time) VALUES (?,?,datetime(?))'
           )
           .then(sth =>
-            Promise.each(prices, p => {
+            prices.reduce(async (acc, p) => {
+              await acc;
               if (!p.err && p.price) {
                 return sth.run(p.stock_id, p.price, 'now');
               }
@@ -60,9 +60,9 @@ router.post('/current', async (req, res, next) => {
                 console.log(`did not get a price for ${p.symbol} [${p.price}]`);
               }
               return Promise.resolve();
-            })
-          );
-      })
+            }, Promise.resolve())
+          )
+      )
       .then(() => res.sendStatus(204));
   } catch (err) {
     next(err);

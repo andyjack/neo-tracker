@@ -5,7 +5,6 @@
   "author": "Andy Jack <github@veracity.ca>",
   "license": "MIT",
   "dependencies": {
-    "bluebird": "^3.4.7",
     "chromedriver": "^2.45.0",
     "csv-stringify": "^5.1.2",
     "eslint": "^5.10.0",

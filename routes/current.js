@@ -1,8 +1,9 @@
-const Promise = require('bluebird');
 const express = require('express');
 
 const router = express.Router();
-const stringify = Promise.promisify(require('csv-stringify'));
+const { promisify } = require('util');
+const stringify = promisify(require('csv-stringify'));
+
 const { sqlite } = require('../lib/db');
 
 router.get('/:symbol', async (req, res, next) => {
