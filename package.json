@@ -21,5 +21,10 @@
   },
   "scripts": {
     "dev-server": "nodemon --watch lib --watch routes --watch app.js app.js"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "prettier": "1.15.3"
   }
 }
