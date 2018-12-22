@@ -1,8 +1,6 @@
-const Promise = require('bluebird');
 const db = require('../lib/db');
 
-Promise.resolve()
-  .then(() => db.startup())
+db.startup()
   .then(() => db.sqlite().migrate())
   // eslint-disable-next-line no-console
   .catch(err => console.log(err));

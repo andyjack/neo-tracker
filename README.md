@@ -53,13 +53,19 @@ scripts/import-from-alphavantage.sh $APIKEY "SPDR Sector XLK" XLK
 
 ```
 # start for the first time
-./node_modules/.bin/pm2 start app.js
+yarn pm2 start app.js
 
 # make pm2 remember to run the app
-./node_modules/.bin/pm2 save
+yarn pm2 save
 
 # install with systemd - follow instructions
-./node_modules/.bin/pm2 startup system
+yarn pm2 startup system
+
+# note that upgrading node versions may have a problem
+# with compiled modules; pm2 also keeps env variables around
+# from its last invocation.  Maybe try:
+
+yarn pm2 restart --update-env
 ```
 
 # Set up scheduled requests
@@ -115,7 +121,7 @@ sudo cp cron/neo-tracker /etc/cron.d/neo-tracker
 
 Run the server on port 3000, with watching of files and auto-restarting:
 ```
-yarn run gulp
+yarn dev-server
 ```
 
 <!--

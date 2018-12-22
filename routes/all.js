@@ -1,15 +1,15 @@
-const Promise = require('bluebird');
 const express = require('express');
 
 const router = express.Router();
+const { promisify } = require('util');
+const stringify = promisify(require('csv-stringify'));
 const { sqlite } = require('../lib/db');
-const stringify = Promise.promisify(require('csv-stringify'));
 
-router.get(
-  '/',
-  async (req, res, next) => {
-    try {
-      await sqlite().all(`
+router.get('/', async (req, res, next) => {
+  try {
+    await sqlite()
+      .all(
+        `
         WITH
         avg50day AS (
           SELECT PRINTF('%.2f',AVG(price)) AS avg50day,stock_id FROM daily_price WHERE date >= date('now','-50 day') GROUP BY stock_id
@@ -29,13 +29,21 @@ router.get(
         JOIN maxmin USING (stock_id)
         JOIN avg200day USING (stock_id)
         JOIN avg50day USING (stock_id);
-        `)
-        .then(rows => stringify(rows, { header: false, columns: ['symbol', 'min', 'max', 'avg50day', 'avg200day', 'price'] }))
-        .then((output) => { res.type('csv'); return res.send(output); });
-    } catch (err) {
-      next(err);
-    }
-  },
-);
+        `
+      )
+      .then(rows =>
+        stringify(rows, {
+          header: false,
+          columns: ['symbol', 'min', 'max', 'avg50day', 'avg200day', 'price'],
+        })
+      )
+      .then(output => {
+        res.type('csv');
+        return res.send(output);
+      });
+  } catch (err) {
+    next(err);
+  }
+});
 
 module.exports = router;
