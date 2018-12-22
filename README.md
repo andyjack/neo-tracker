@@ -115,7 +115,7 @@ sudo cp cron/neo-tracker /etc/cron.d/neo-tracker
 
 Run the server on port 3000, with watching of files and auto-restarting:
 ```
-yarn run gulp
+yarn dev-server
 ```
 
 <!--
