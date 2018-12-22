@@ -2,6 +2,6 @@
 
 const getPrices = require('../lib/getPrices.js');
 
-const rows = [{ symbol: 'AAPL' }, { symbol: 'MSFT' }];
+const rows = [{ symbol: 'AAPL' }, { symbol: 'MSFT' }, { symbol: 'KO' }];
 // eslint-disable-next-line no-console
 getPrices.alphavantage(rows).then(prices => console.dir(prices));
