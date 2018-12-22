@@ -3,18 +3,24 @@ const express = require('express');
 const moment = require('moment');
 
 const router = express.Router();
-const { sqlite } = require('../lib/db');
 const stringify = Promise.promisify(require('csv-stringify'));
+const { sqlite } = require('../lib/db');
 
 function outputRows(res, rows) {
   const output = [];
-  rows.forEach((r) => { output.push([r.date, r.price]); });
+  rows.forEach(r => {
+    output.push([r.date, r.price]);
+  });
   res.type('csv');
   return stringify(output).then(str => res.send(str));
 }
 
 function secondsTo605pm(now) {
-  const sixPm = now.clone().startOf('day').add(18, 'hours').add(5, 'minutes');
+  const sixPm = now
+    .clone()
+    .startOf('day')
+    .add(18, 'hours')
+    .add(5, 'minutes');
   if (sixPm.isBefore(now)) {
     sixPm.add(1, 'day');
   }
@@ -32,41 +38,45 @@ router.use((req, res, next) => {
   next();
 });
 
-router.get(
-  '/month/:symbol',
-  async (req, res, next) => {
-    try {
-      const rows = await sqlite().all(
-        'SELECT date,price FROM daily_price JOIN stock USING (stock_id)' +
+router.get('/month/:symbol', async (req, res, next) => {
+  try {
+    const rows = await sqlite().all(
+      'SELECT date,price FROM daily_price JOIN stock USING (stock_id)' +
         ' WHERE symbol = ? AND date > date(?,?) ORDER BY date DESC',
-        req.params.symbol, 'now', '-30 days',
-      );
-      if (rows.length === 0) { res.sendStatus(404); return; }
-      outputRows(res, rows);
-    } catch (err) {
-      next(err);
+      req.params.symbol,
+      'now',
+      '-30 days'
+    );
+    if (rows.length === 0) {
+      res.sendStatus(404);
+      return;
     }
-  },
-);
+    outputRows(res, rows);
+  } catch (err) {
+    next(err);
+  }
+});
 
-router.get(
-  '/year/:symbol',
-  async (req, res, next) => {
-    try {
-      const rows = await sqlite().all(
-        'SELECT date,price FROM daily_price JOIN stock USING (stock_id) ' +
+router.get('/year/:symbol', async (req, res, next) => {
+  try {
+    const rows = await sqlite().all(
+      'SELECT date,price FROM daily_price JOIN stock USING (stock_id) ' +
         ' WHERE symbol = ? AND date > date(?,?) AND strftime(?,date) = ?' +
         ' ORDER BY date DESC',
-        req.params.symbol,
-        'now', '-1 year',
-        '%w', '1', // only want Mondays
-      );
-      if (rows.length === 0) { res.sendStatus(404); return; }
-      outputRows(res, rows);
-    } catch (err) {
-      next(err);
+      req.params.symbol,
+      'now',
+      '-1 year',
+      '%w',
+      '1' // only want Mondays
+    );
+    if (rows.length === 0) {
+      res.sendStatus(404);
+      return;
     }
-  },
-);
+    outputRows(res, rows);
+  } catch (err) {
+    next(err);
+  }
+});
 
 module.exports = router;
