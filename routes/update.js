@@ -17,6 +17,9 @@ router.post('/current', async (req, res, next) => {
       )
       // TODO what if no rows, reject
       .then(rows => {
+        // finish talking to the client immediately.
+        res.sendStatus(204).end();
+
         const serviceRows = {};
         rows.forEach(r => {
           serviceRows[r.service_name] = serviceRows[r.service_name] || [];
@@ -62,8 +65,7 @@ router.post('/current', async (req, res, next) => {
               return Promise.resolve();
             }, Promise.resolve())
           )
-      )
-      .then(() => res.sendStatus(204));
+      );
   } catch (err) {
     next(err);
   }
