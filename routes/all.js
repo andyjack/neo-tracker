@@ -43,7 +43,7 @@ router.get('/', async (req, res, next) => {
             'price',
             'updated',
           ],
-          quotedString: true,
+          quoted: true,
         })
       )
       .then(output => {
