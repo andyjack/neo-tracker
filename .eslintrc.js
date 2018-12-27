@@ -9,6 +9,7 @@ module.exports = {
   },
   rules: {
     indent: ['error', 2],
+    'no-use-before-define': ['error', { functions: false, classes: true }],
     'linebreak-style': ['error', 'unix'],
     'prettier/prettier': ['warn', { singleQuote: true, trailingComma: 'es5' }],
   },
