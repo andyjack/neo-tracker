@@ -5,25 +5,28 @@
   "author": "Andy Jack <github@veracity.ca>",
   "license": "MIT",
   "dependencies": {
-    "chromedriver": "^76.0.0",
-    "csv-stringify": "^5.3.0",
-    "eslint": "^6.1.0",
-    "eslint-config-airbnb-base": "^13.2.0",
+    "chromedriver": "^77.0.0",
+    "csv-stringify": "^5.3.3",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
     "express": "^4.17.1",
     "moment": "^2.24.0",
     "node-fetch": "^2.6.0",
-    "nodemon": "^1.19.1",
+    "nodemon": "^1.19.3",
     "pm2": "^3.5.1",
-    "selenium-webdriver": "^4.0.0-alpha.4",
+    "selenium-webdriver": "^4.0.0-alpha.5",
     "sqlite": "^3.0.3"
   },
   "scripts": {
     "dev-server": "nodemon --watch lib --watch routes --watch app.js app.js"
   },
   "devDependencies": {
-    "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-prettier": "^3.1.1",
     "prettier": "1.18.2"
+  },
+    "resolutions": {
+    "**/axios": "^0.19.0"
   }
 }
