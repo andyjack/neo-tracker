@@ -16,37 +16,37 @@ router.post('/current', async (req, res, next) => {
         1
       )
       // TODO what if no rows, reject
-      .then(rows => {
+      .then((rows) => {
         // finish talking to the client immediately.
         res.sendStatus(204).end();
 
         const serviceRows = {};
-        rows.forEach(r => {
+        rows.forEach((r) => {
           serviceRows[r.service_name] = serviceRows[r.service_name] || [];
           serviceRows[r.service_name].push(r);
         });
         const priceTodo = [];
-        Object.keys(serviceRows).forEach(k =>
+        Object.keys(serviceRows).forEach((k) =>
           priceTodo.push(getPrices[k](serviceRows[k]))
         );
         return Promise.all(priceTodo);
       })
-      .then(servicePrices => {
+      .then((servicePrices) => {
         const priceRows = [];
-        servicePrices.forEach(sp => {
-          sp.forEach(e => {
+        servicePrices.forEach((sp) => {
+          sp.forEach((e) => {
             priceRows.push(e);
           });
         });
         return priceRows;
       })
       // TODO what if all errors, reject, log?
-      .then(prices =>
+      .then((prices) =>
         sqlite()
           .prepare(
             'REPLACE INTO current_price (stock_id,price,time) VALUES (?,?,datetime(?))'
           )
-          .then(sth =>
+          .then((sth) =>
             prices.reduce(async (acc, p) => {
               await acc;
               if (!p.err && p.price) {

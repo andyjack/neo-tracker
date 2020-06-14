@@ -8,19 +8,15 @@ const { sqlite } = require('../lib/db');
 
 function outputRows(res, rows) {
   const output = [];
-  rows.forEach(r => {
+  rows.forEach((r) => {
     output.push([r.date, r.price]);
   });
   res.type('csv');
-  return stringify(output).then(str => res.send(str));
+  return stringify(output).then((str) => res.send(str));
 }
 
 function secondsTo605pm(now) {
-  const sixPm = now
-    .clone()
-    .startOf('day')
-    .add(18, 'hours')
-    .add(5, 'minutes');
+  const sixPm = now.clone().startOf('day').add(18, 'hours').add(5, 'minutes');
   if (sixPm.isBefore(now)) {
     sixPm.add(1, 'day');
   }

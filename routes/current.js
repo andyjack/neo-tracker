@@ -37,7 +37,7 @@ router.get('/:symbol', async (req, res, next) => {
     res.type('csv');
     await stringify([
       [maxmin.min, maxmin.max, parsed50day, parsed200day, priceRow.price],
-    ]).then(output => res.send(output));
+    ]).then((output) => res.send(output));
   } catch (err) {
     next(err);
   }
