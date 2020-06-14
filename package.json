@@ -15,7 +15,8 @@
     "nodemon": "^2.0.4",
     "pm2": "^4.4.0",
     "selenium-webdriver": "^4.0.0-alpha.7",
-    "sqlite": "^4.0.11"
+    "sqlite": "^4.0.11",
+    "sqlite3": "^4.2.0"
   },
   "scripts": {
     "dev-server": "nodemon --watch lib --watch routes --watch app.js app.js"
