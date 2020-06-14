@@ -23,7 +23,7 @@ app.use((err, req, res, next) => {
 async function main() {
   db.startup()
     // eslint-disable-next-line no-console
-    .catch(err => console.error(err.stack))
+    .catch((err) => console.error(err.stack))
     .finally(() => app.listen(port));
 }
 

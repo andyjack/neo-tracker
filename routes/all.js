@@ -31,7 +31,7 @@ router.get('/', async (req, res, next) => {
         JOIN avg50day USING (stock_id);
         `
       )
-      .then(rows =>
+      .then((rows) =>
         stringify(rows, {
           header: false,
           columns: [
@@ -46,7 +46,7 @@ router.get('/', async (req, res, next) => {
           quoted: true,
         })
       )
-      .then(output => {
+      .then((output) => {
         res.type('csv');
         return res.send(output);
       });
