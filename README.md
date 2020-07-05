@@ -103,12 +103,8 @@ sudo cp cron/neo-tracker /etc/cron.d/neo-tracker
 
 ## POST
 
-* `/update/current` - fetch prices from the NEO exchange website, and update
-  the locally stored prices.  Should be run every hour or so on trading days
-* `/update/daily` - copy the current price into the daily price for today.
-  Should be run once a day, on trading days, after close of trading.  If the
-  data for the stock and day already exists in the daily price table, this is
-  a no-op.
+* `/update/current` - fetch prices and update the locally stored prices.
+  Should be run every hour or so on trading days
 
 # Some TODO
 
