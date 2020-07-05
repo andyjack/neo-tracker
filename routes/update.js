@@ -44,13 +44,13 @@ router.post('/current', async (req, res, next) => {
       .then((prices) =>
         sqlite()
           .prepare(
-            'REPLACE INTO current_price (stock_id,price,time) VALUES (?,?,datetime(?))'
+            'REPLACE INTO daily_price (stock_id,price,date) VALUES (?,?,?)'
           )
           .then((sth) =>
             prices.reduce(async (acc, p) => {
               await acc;
               if (!p.err && p.price) {
-                return sth.run(p.stock_id, p.price, 'now');
+                return sth.run(p.stock_id, p.price, p.date);
               }
               if (p.err) {
                 // eslint-disable-next-line no-console
@@ -66,22 +66,6 @@ router.post('/current', async (req, res, next) => {
             }, Promise.resolve())
           )
       );
-  } catch (err) {
-    next(err);
-  }
-});
-
-router.post('/daily', async (req, res, next) => {
-  try {
-    await sqlite()
-      .run(
-        'INSERT OR IGNORE INTO daily_price (stock_id,price,date) ' +
-          'SELECT stock_id,price,date(?) FROM current_price ' +
-          '  WHERE date(time) = date(?)',
-        'now',
-        'now'
-      )
-      .then(() => res.sendStatus(204));
   } catch (err) {
     next(err);
   }

@@ -17,7 +17,7 @@ yarn install --offline
 ```sh
 # you backed this up right?
 rm database.sqlite
-node scripts/migrate.js
+yarn node scripts/migrate.js
 ```
 
 # Import data

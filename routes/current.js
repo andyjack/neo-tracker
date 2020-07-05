@@ -9,7 +9,16 @@ const { sqlite } = require('../lib/db');
 router.get('/:symbol', async (req, res, next) => {
   try {
     const priceRow = await sqlite().get(
-      'SELECT price FROM current_price JOIN stock USING (stock_id) WHERE symbol = ?',
+      `
+      WITH
+      latest_date AS (
+        SELECT MAX(date) AS date,stock_id FROM daily_price GROUP BY stock_id
+      )
+      SELECT price
+      FROM daily_price dp
+      JOIN latest_date ld USING (stock_id,date)
+      JOIN stock USING (stock_id) WHERE symbol = ?
+      `,
       req.params.symbol
     );
     if (typeof priceRow === 'undefined') {
