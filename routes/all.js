@@ -20,8 +20,11 @@ router.get('/', async (req, res, next) => {
         maxmin AS (
           SELECT MAX(price) AS max,MIN(price) AS min,stock_id FROM daily_price where date > date('now','-1 year') GROUP BY stock_id
         ),
+        latest_date AS (
+          SELECT MAX(date) AS updated,stock_id FROM daily_price GROUP BY stock_id
+        ),
         latest AS (
-          SELECT price,datetime(time,'localtime') AS updated,stock_id FROM current_price
+          SELECT price, updated, dp.stock_id FROM daily_price dp JOIN latest_date ld ON dp.stock_id = ld.stock_id AND dp.date = ld.updated
         )
         SELECT symbol,max,min,avg50day,avg200day,price,updated
         FROM stock
