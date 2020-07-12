@@ -1,4 +1,5 @@
-# Do update/current once an hour from 10am to 4pm, sleeping up to 50 minutes beforehand.
+# Do update/current every other hour from 10am to 4pm, sleeping up to 50 minutes beforehand - on weekdays.
+# Do update/current Saturday morning.
 # At midnight, back up the sqlite file.
 # vim:ft=crontab
 0 10-16/2 * * 1-5     nobody    perl -le 'sleep rand 3000' && curl --silent --insecure --request POST https://localhost/app/update/current >/dev/null
