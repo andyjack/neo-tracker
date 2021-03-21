@@ -3,3 +3,11 @@
 node_modules
 yarn-error.log
 alpha_vantage_key.txt
+### yarn v2
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
