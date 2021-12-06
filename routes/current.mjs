@@ -42,9 +42,11 @@ router.get('/:symbol', async (req, res, next) => {
     const parsed50day = Number.parseFloat(day50ma.avg).toFixed(2);
     const parsed200day = Number.parseFloat(day200ma.avg).toFixed(2);
     res.type('csv');
-    await stringify([
-      [maxmin.min, maxmin.max, parsed50day, parsed200day, priceRow.price],
-    ]).then((output) => res.send(output));
+    res.send(
+      stringify([
+        [maxmin.min, maxmin.max, parsed50day, parsed200day, priceRow.price],
+      ])
+    );
   } catch (err) {
     next(err);
   }

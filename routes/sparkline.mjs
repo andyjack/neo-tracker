@@ -11,7 +11,7 @@ function outputRows(res, rows) {
     output.push([r.date, r.price]);
   });
   res.type('csv');
-  return stringify(output).then((str) => res.send(str));
+  return res.send(stringify(output));
 }
 
 function secondsTo605pm(now) {

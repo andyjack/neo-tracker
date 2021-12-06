@@ -1,5 +1,5 @@
 import express from 'express';
-import startup from './lib/db.mjs';
+import { startup } from './lib/db.mjs';
 
 import current from './routes/current.mjs';
 import all from './routes/all.mjs';

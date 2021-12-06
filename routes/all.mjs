@@ -33,24 +33,23 @@ router.get('/', async (req, res, next) => {
         JOIN avg50day USING (stock_id);
         `
       )
-      .then((rows) =>
-        stringify(rows, {
-          header: false,
-          columns: [
-            'symbol',
-            'min',
-            'max',
-            'avg50day',
-            'avg200day',
-            'price',
-            'updated',
-          ],
-          quoted: true,
-        })
-      )
-      .then((output) => {
+      .then((rows) => {
         res.type('csv');
-        return res.send(output);
+        return res.send(
+          stringify(rows, {
+            header: false,
+            columns: [
+              'symbol',
+              'min',
+              'max',
+              'avg50day',
+              'avg200day',
+              'price',
+              'updated',
+            ],
+            quoted: true,
+          })
+        );
       });
   } catch (err) {
     next(err);
