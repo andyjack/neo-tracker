@@ -1,10 +1,10 @@
-const express = require('express');
-const moment = require('moment');
+import express from 'express';
+import moment from 'moment';
+// eslint-disable-next-line import/no-unresolved
+import { stringify } from 'csv-stringify/sync';
+import { sqlite } from '../lib/db.mjs';
 
 const router = express.Router();
-const { promisify } = require('util');
-const stringify = promisify(require('csv-stringify'));
-const { sqlite } = require('../lib/db');
 
 function outputRows(res, rows) {
   const output = [];
@@ -12,7 +12,7 @@ function outputRows(res, rows) {
     output.push([r.date, r.price]);
   });
   res.type('csv');
-  return stringify(output).then((str) => res.send(str));
+  return res.send(stringify(output));
 }
 
 function secondsTo605pm(now) {
@@ -75,4 +75,4 @@ router.get('/year/:symbol', async (req, res, next) => {
   }
 });
 
-module.exports = router;
+export default router;

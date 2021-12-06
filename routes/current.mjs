@@ -1,10 +1,9 @@
-const express = require('express');
+import express from 'express';
+// eslint-disable-next-line import/no-unresolved
+import { stringify } from 'csv-stringify/sync';
+import { sqlite } from '../lib/db.mjs';
 
 const router = express.Router();
-const { promisify } = require('util');
-const stringify = promisify(require('csv-stringify'));
-
-const { sqlite } = require('../lib/db');
 
 router.get('/:symbol', async (req, res, next) => {
   try {
@@ -44,12 +43,14 @@ router.get('/:symbol', async (req, res, next) => {
     const parsed50day = Number.parseFloat(day50ma.avg).toFixed(2);
     const parsed200day = Number.parseFloat(day200ma.avg).toFixed(2);
     res.type('csv');
-    await stringify([
-      [maxmin.min, maxmin.max, parsed50day, parsed200day, priceRow.price],
-    ]).then((output) => res.send(output));
+    res.send(
+      stringify([
+        [maxmin.min, maxmin.max, parsed50day, parsed200day, priceRow.price],
+      ])
+    );
   } catch (err) {
     next(err);
   }
 });
 
-module.exports = router;
+export default router;

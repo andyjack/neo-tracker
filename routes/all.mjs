@@ -1,9 +1,9 @@
-const express = require('express');
+import express from 'express';
+// eslint-disable-next-line import/no-unresolved
+import { stringify } from 'csv-stringify/sync';
+import { sqlite } from '../lib/db.mjs';
 
 const router = express.Router();
-const { promisify } = require('util');
-const stringify = promisify(require('csv-stringify'));
-const { sqlite } = require('../lib/db');
 
 router.get('/', async (req, res, next) => {
   try {
@@ -34,28 +34,27 @@ router.get('/', async (req, res, next) => {
         JOIN avg50day USING (stock_id);
         `
       )
-      .then((rows) =>
-        stringify(rows, {
-          header: false,
-          columns: [
-            'symbol',
-            'min',
-            'max',
-            'avg50day',
-            'avg200day',
-            'price',
-            'updated',
-          ],
-          quoted: true,
-        })
-      )
-      .then((output) => {
+      .then((rows) => {
         res.type('csv');
-        return res.send(output);
+        return res.send(
+          stringify(rows, {
+            header: false,
+            columns: [
+              'symbol',
+              'min',
+              'max',
+              'avg50day',
+              'avg200day',
+              'price',
+              'updated',
+            ],
+            quoted: true,
+          })
+        );
       });
   } catch (err) {
     next(err);
   }
 });
 
-module.exports = router;
+export default router;
