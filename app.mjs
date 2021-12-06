@@ -1,13 +1,18 @@
-const express = require('express');
-const db = require('./lib/db');
+import express from 'express';
+import startup from './lib/db.mjs';
+
+import current from './routes/current.mjs';
+import all from './routes/all.mjs';
+import sparkline from './routes/sparkline.mjs';
+import update from './routes/update.mjs';
 
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use('/app/current', require('./routes/current'));
-app.use('/app/all', require('./routes/all'));
-app.use('/app/sparkline', require('./routes/sparkline'));
-app.use('/app/update', require('./routes/update'));
+app.use('/app/current', current);
+app.use('/app/all', all);
+app.use('/app/sparkline', sparkline);
+app.use('/app/update', update);
 
 app.use((err, req, res, next) => {
   // eslint-disable-next-line no-console
@@ -21,7 +26,7 @@ app.use((err, req, res, next) => {
 });
 
 async function main() {
-  db.startup()
+  startup()
     // eslint-disable-next-line no-console
     .catch((err) => console.error(err.stack))
     .finally(() => app.listen(port));

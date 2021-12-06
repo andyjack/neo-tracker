@@ -1,8 +1,8 @@
-const express = require('express');
+import express from 'express';
+import { sqlite } from '../lib/db.mjs';
+import getPrices from '../lib/getPrices.mjs';
 
 const router = express.Router();
-const { sqlite } = require('../lib/db');
-const getPrices = require('../lib/getPrices');
 
 router.post('/current', async (req, res, next) => {
   try {
@@ -71,4 +71,4 @@ router.post('/current', async (req, res, next) => {
   }
 });
 
-module.exports = router;
+export default router;

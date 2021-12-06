@@ -1,10 +1,9 @@
-const express = require('express');
-const moment = require('moment');
+import express from 'express';
+import moment from 'moment';
+import { stringify } from 'csv-stringify/sync';
+import { sqlite } from '../lib/db.mjs';
 
 const router = express.Router();
-const { promisify } = require('util');
-const stringify = promisify(require('csv-stringify'));
-const { sqlite } = require('../lib/db');
 
 function outputRows(res, rows) {
   const output = [];
@@ -75,4 +74,4 @@ router.get('/year/:symbol', async (req, res, next) => {
   }
 });
 
-module.exports = router;
+export default router;

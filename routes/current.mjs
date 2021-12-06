@@ -1,10 +1,8 @@
-const express = require('express');
+import express from 'express';
+import { stringify } from 'csv-stringify/sync';
+import { sqlite } from '../lib/db.mjs';
 
 const router = express.Router();
-const { promisify } = require('util');
-const stringify = promisify(require('csv-stringify'));
-
-const { sqlite } = require('../lib/db');
 
 router.get('/:symbol', async (req, res, next) => {
   try {
@@ -52,4 +50,4 @@ router.get('/:symbol', async (req, res, next) => {
   }
 });
 
-module.exports = router;
+export default router;
