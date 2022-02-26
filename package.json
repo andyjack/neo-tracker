@@ -11,7 +11,7 @@
     "eslint-plugin-import": "^2.25.4",
     "express": "^4.17.3",
     "moment": "^2.29.1",
-    "node-fetch": "^2.6.7",
+    "node-fetch": "^3.2.0",
     "nodemon": "^2.0.15",
     "pm2": "^5.2.0",
     "selenium-webdriver": "^4.1.1",
