@@ -5,16 +5,16 @@
   "author": "Andy Jack <github@veracity.ca>",
   "license": "MIT",
   "dependencies": {
-    "csv-stringify": "^6.0.4",
-    "eslint": "^8.4.0",
+    "csv-stringify": "^6.0.5",
+    "eslint": "^8.10.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.25.3",
-    "express": "^4.17.1",
+    "eslint-plugin-import": "^2.25.4",
+    "express": "^4.17.3",
     "moment": "^2.29.1",
-    "node-fetch": "^2.6.6",
+    "node-fetch": "^2.6.7",
     "nodemon": "^2.0.15",
-    "pm2": "^5.1.2",
-    "selenium-webdriver": "^4.1.0",
+    "pm2": "^5.2.0",
+    "selenium-webdriver": "^4.1.1",
     "sqlite": "^4.0.23",
     "sqlite3": "^5.0.2"
   },
@@ -22,7 +22,7 @@
     "dev-server": "nodemon --watch lib --watch routes --watch app.js app.js"
   },
   "devDependencies": {
-    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-prettier": "^8.4.0",
     "eslint-plugin-prettier": "^4.0.0",
     "prettier": "2.5.1"
   }
