@@ -1,14 +1,13 @@
 #!/usr/bin/env node
 
-const db = require('../lib/db');
+import { startup, sqlite } from '../lib/db.mjs';
 
-(async function () {
-  await db
-    .startup()
+async function f() {
+  await startup()
     // eslint-disable-next-line no-console
     .catch((err) => console.error(err.stack));
 
-  db.sqlite()
+  sqlite()
     .all(
       'SELECT date,price FROM daily_price JOIN stock USING (stock_id) ' +
         ' WHERE symbol = ? AND date > date(?,?) AND strftime(?,date) = ?' +
@@ -19,5 +18,7 @@ const db = require('../lib/db');
       '%w',
       '1' // only want Mondays
     )
+    // eslint-disable-next-line no-console
     .then((rows) => console.dir(rows));
-})();
+}
+f();
