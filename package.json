@@ -10,7 +10,7 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4",
     "express": "^4.17.3",
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "node-fetch": "^3.2.3",
     "nodemon": "^2.0.15",
     "pm2": "^5.2.0",
