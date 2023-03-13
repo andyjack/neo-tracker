@@ -3533,7 +3533,7 @@ fsevents@~2.3.2:
     prettier: 2.8.2
     selenium-webdriver: ^4.7.1
     sqlite: ^4.1.2
-    sqlite3: ^5.1.4
+    sqlite3: ^5.1.5
   languageName: unknown
   linkType: soft
 
@@ -4941,9 +4941,9 @@ resolve@^1.22.0:
   languageName: node
   linkType: hard
 
-"sqlite3@npm:^5.1.4":
-  version: 5.1.4
-  resolution: "sqlite3@npm:5.1.4"
+"sqlite3@npm:^5.1.5":
+  version: 5.1.5
+  resolution: "sqlite3@npm:5.1.5"
   dependencies:
     "@mapbox/node-pre-gyp": ^1.0.0
     node-addon-api: ^4.2.0
@@ -4957,7 +4957,7 @@ resolve@^1.22.0:
   peerDependenciesMeta:
     node-gyp:
       optional: true
-  checksum: a58126a3d3e39977cb8004b89b8ea7007ed360a27126ea308412f77f538352d3a1002e936214377838ee0625ca08c7c94739fcb4aad421ca239dd0b7a4b0b01a
+  checksum: 98a237c45e97cb1b293af37e92275635aeeec667f22d0753e9482143baf80c87c3f38a348da64406a08b4ac32329adc9254f8f33732c6c5889b15980ca8cad5f
   languageName: node
   linkType: hard
 
