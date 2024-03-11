@@ -1,4 +1,5 @@
 import express from 'express';
+import moment from 'moment';
 import { sqlite } from '../lib/db.mjs';
 import getPrices from '../lib/getPrices.mjs';
 
@@ -52,15 +53,18 @@ router.post('/current', async (req, res, next) => {
               if (!p.err && p.price) {
                 return sth.run(p.stock_id, p.price, p.date);
               }
+              const logtime = moment().format('YYYY-MM-DD HH:MM:SS');
               if (p.err) {
                 // eslint-disable-next-line no-console
                 console.log(
-                  `got ${p.err} fetching current price for ${p.symbol}`
+                  `${logtime} got ${p.err} fetching current price for ${p.symbol}`
                 );
               }
               if (!p.price) {
                 // eslint-disable-next-line no-console
-                console.log(`did not get a price for ${p.symbol} [${p.price}]`);
+                console.log(
+                  `${logtime} did not get a price for ${p.symbol} [${p.price}]`
+                );
               }
               return Promise.resolve();
             }, Promise.resolve())
