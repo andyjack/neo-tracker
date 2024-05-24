@@ -133,42 +133,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@opencensus/core@npm:0.0.9":
-  version: 0.0.9
-  resolution: "@opencensus/core@npm:0.0.9"
-  dependencies:
-    continuation-local-storage: ^3.2.1
-    log-driver: ^1.2.7
-    semver: ^5.5.0
-    shimmer: ^1.2.0
-    uuid: ^3.2.1
-  checksum: acde765b5da087177cb7e1ed1a8b28a6dd7a51507e74f43a68133b3008a66e4b10aef3b0811236830939f72b83edad4cef289dce41c7f02ff655b58669680789
-  languageName: node
-  linkType: hard
-
-"@opencensus/core@npm:^0.0.8":
-  version: 0.0.8
-  resolution: "@opencensus/core@npm:0.0.8"
-  dependencies:
-    continuation-local-storage: ^3.2.1
-    log-driver: ^1.2.7
-    semver: ^5.5.0
-    shimmer: ^1.2.0
-    uuid: ^3.2.1
-  checksum: 2c18584d8b48d06e6fab7e9c3faf0585fe9b2ffe3258960a8c3b5ca6460a040d95374857dc18f97d90a95b606366e03bccb364ac1d8e65d6306fffda1c82ac9c
-  languageName: node
-  linkType: hard
-
-"@opencensus/propagation-b3@npm:0.0.8":
-  version: 0.0.8
-  resolution: "@opencensus/propagation-b3@npm:0.0.8"
-  dependencies:
-    "@opencensus/core": ^0.0.8
-    uuid: ^3.2.1
-  checksum: 19ba80827f78d60a97e87fa610813d2f143eb6df02a0fbc2d4fbe36a490e4ea901a0a8a506694bd08947abd384e9f689dce0e86da0af3c212ebc625c4fcb59f9
-  languageName: node
-  linkType: hard
-
 "@pkgr/core@npm:^0.1.0":
   version: 0.1.1
   resolution: "@pkgr/core@npm:0.1.1"
@@ -197,21 +161,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pm2/io@npm:~5.0.0":
-  version: 5.0.0
-  resolution: "@pm2/io@npm:5.0.0"
+"@pm2/io@npm:~6.0.0":
+  version: 6.0.0
+  resolution: "@pm2/io@npm:6.0.0"
   dependencies:
-    "@opencensus/core": 0.0.9
-    "@opencensus/propagation-b3": 0.0.8
     async: ~2.6.1
     debug: ~4.3.1
     eventemitter2: ^6.3.1
     require-in-the-middle: ^5.0.0
-    semver: 6.3.0
+    semver: ~7.5.4
     shimmer: ^1.2.0
     signal-exit: ^3.0.3
     tslib: 1.9.3
-  checksum: e05ba9099b7bf8cdbe6dbac3a6f4eb328d9c8045c0cc8f9be15b15ee422ede559254626cdc12905337ba81fc00fd48698cdc65a8e23777de72cb22f1aa58a6e9
+  checksum: 22e41e667023a6cfd93161419056a766b66cb5b76009ba8fba7a6e8a2fae3ab6ac3c0678280666cb1a1fcc1addae534a48dba02ff1ae35041a6a1ccaa26662ca
   languageName: node
   linkType: hard
 
@@ -605,16 +567,6 @@ __metadata:
   dependencies:
     tslib: ^2.0.1
   checksum: c65a54344a15a8ab4d5584f0b9ca65ee6ab17a1751328857eb7220251430053f9b618e26b300631e40e496c852ce63101dd5265fbc9b9ba864b28583e65f5987
-  languageName: node
-  linkType: hard
-
-"async-listener@npm:^0.6.0":
-  version: 0.6.10
-  resolution: "async-listener@npm:0.6.10"
-  dependencies:
-    semver: ^5.3.0
-    shimmer: ^1.1.0
-  checksum: 5776700738ab572a21e0fa6a22e8748d7c9da1d61a6c1750fd5f08800869b05f1b7d610008a42b7099d69be54fd61508173f589d0651947d724bb8d08f575b58
   languageName: node
   linkType: hard
 
@@ -1134,16 +1086,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"continuation-local-storage@npm:^3.2.1":
-  version: 3.2.1
-  resolution: "continuation-local-storage@npm:3.2.1"
-  dependencies:
-    async-listener: ^0.6.0
-    emitter-listener: ^1.1.1
-  checksum: 9dd703ae025043df5f5539ef9b66b26eabbfb99af746ffa66f22705bb90eab1cf5c14a06a16b6439c666c6c357194f42d6703c54489b72a70fbd551be8a03378
-  languageName: node
-  linkType: hard
-
 "cookie-signature@npm:1.0.6":
   version: 1.0.6
   resolution: "cookie-signature@npm:1.0.6"
@@ -1183,10 +1125,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"csv-stringify@npm:^6.4.6":
-  version: 6.4.6
-  resolution: "csv-stringify@npm:6.4.6"
-  checksum: 22d41c9a0bb6150129e83944f46aba70163d5b72b5fa88baee0d72c7c531b814c2428e5e606af97223decff32944b3a7b47de9d9afc8d75ee983ff88e5aead2b
+"csv-stringify@npm:^6.5.0":
+  version: 6.5.0
+  resolution: "csv-stringify@npm:6.5.0"
+  checksum: d24b3d20067468b80b912b7700aa31342b540934804f0b295cc94b7641b5d68cd9ff63b612861d1451663a4c65c459b4014be3a0b180ff2e3e4e98fc15a59052
   languageName: node
   linkType: hard
 
@@ -1460,15 +1402,6 @@ __metadata:
   version: 1.1.1
   resolution: "ee-first@npm:1.1.1"
   checksum: ba74f91398e3ee3b6d665b2f0d13ad6530e89a7e64ec886a6eec0602fb8a5a274652960e21bd5d4b42fdeb9017d873ff872f50342d38779e955285977edb337c
-  languageName: node
-  linkType: hard
-
-"emitter-listener@npm:^1.1.1":
-  version: 1.1.2
-  resolution: "emitter-listener@npm:1.1.2"
-  dependencies:
-    shimmer: ^1.2.0
-  checksum: 3dec4c92d9a0b573e321f304acc259db53cdf068873dd524e7bf27f205971b8b1bacb4eb0d42dae084a9a841ec519bede5246d04805f1689da306d995316a6a4
   languageName: node
   linkType: hard
 
@@ -2509,7 +2442,7 @@ fsevents@~2.1.1:
   languageName: node
   linkType: hard
 
-"glob@npm:7.1.3, glob@npm:^7.0.5, glob@npm:^7.1.3":
+"glob@npm:7.1.3, glob@npm:^7.1.3":
   version: 7.1.3
   resolution: "glob@npm:7.1.3"
   dependencies:
@@ -3310,7 +3243,7 @@ fsevents@~2.1.1:
   languageName: node
   linkType: hard
 
-"js-yaml@npm:^4.1.0":
+"js-yaml@npm:^4.1.0, js-yaml@npm:~4.1.0":
   version: 4.1.0
   resolution: "js-yaml@npm:4.1.0"
   dependencies:
@@ -3448,13 +3381,6 @@ fsevents@~2.1.1:
   version: 4.17.20
   resolution: "lodash@npm:4.17.20"
   checksum: c62101d2500c383b5f174a7e9e6fe8098149ddd6e9ccfa85f36d4789446195f5c4afd3cfba433026bcaf3da271256566b04a2bf2618e5a39f6e67f8c12030cb6
-  languageName: node
-  linkType: hard
-
-"log-driver@npm:^1.2.7":
-  version: 1.2.7
-  resolution: "log-driver@npm:1.2.7"
-  checksum: b4355545c33328fc022f49a48f68a834191efedf7a8279f51aefdc1b3b387e20db41c0ce0124db84d170da9d8443ad66d1869325336630ba376a89bc83c357a6
   languageName: node
   linkType: hard
 
@@ -3868,7 +3794,7 @@ fsevents@~2.1.1:
   version: 0.0.0-use.local
   resolution: "neo-query.git@workspace:."
   dependencies:
-    csv-stringify: ^6.4.6
+    csv-stringify: ^6.5.0
     eslint: ^8.57.0
     eslint-config-airbnb-base: ^15.0.0
     eslint-config-prettier: ^9.1.0
@@ -3878,8 +3804,8 @@ fsevents@~2.1.1:
     moment: ^2.30.1
     node-fetch: ^3.3.2
     nodemon: ^3.1.0
-    playwright: ^1.42.1
-    pm2: ^5.3.1
+    playwright: ^1.44.1
+    pm2: ^5.4.0
     prettier: 3.2.5
     sqlite: ^5.1.1
     sqlite3: ^5.1.7
@@ -4446,27 +4372,27 @@ fsevents@~2.1.1:
   languageName: node
   linkType: hard
 
-"playwright-core@npm:1.42.1":
-  version: 1.42.1
-  resolution: "playwright-core@npm:1.42.1"
+"playwright-core@npm:1.44.1":
+  version: 1.44.1
+  resolution: "playwright-core@npm:1.44.1"
   bin:
     playwright-core: cli.js
-  checksum: 1b9b46f39731d70e39421df1f33b1a8717e62046ada36e486c94bfd9a613f5126d8791a85ad0485cf67507087a035a7a267ba2fc754b7bdb9ccbcdc19fc3fa52
+  checksum: 5223aa151e885d4811af3d952d93882e1902c772570308a89ffc74679ca57398ec09393da19ce147c4ba3e50094969a6b2896cb79c32f3bb1e744c8c391b8482
   languageName: node
   linkType: hard
 
-"playwright@npm:^1.42.1":
-  version: 1.42.1
-  resolution: "playwright@npm:1.42.1"
+"playwright@npm:^1.44.1":
+  version: 1.44.1
+  resolution: "playwright@npm:1.44.1"
   dependencies:
     fsevents: 2.3.2
-    playwright-core: 1.42.1
+    playwright-core: 1.44.1
   dependenciesMeta:
     fsevents:
       optional: true
   bin:
     playwright: cli.js
-  checksum: a6f01b855fc6e8003df5dd43d652cbaa72beac345318168aae4ccd7d5b5ba32fb12ea1f5b4b354df48054385acd1c9da43482eeb32c93d6141e9b22bec261ce3
+  checksum: 59e7ed3f0073f1522d2cfbf275b1441b456050f227af7628a89eab5cde92a9ccf4668c03c1b4b3fb9e94fa914b947822cd8c3845051335f00c60aa3eb6ccb209
   languageName: node
   linkType: hard
 
@@ -4523,12 +4449,12 @@ fsevents@~2.1.1:
   languageName: node
   linkType: hard
 
-"pm2@npm:^5.3.1":
-  version: 5.3.1
-  resolution: "pm2@npm:5.3.1"
+"pm2@npm:^5.4.0":
+  version: 5.4.0
+  resolution: "pm2@npm:5.4.0"
   dependencies:
     "@pm2/agent": ~2.0.0
-    "@pm2/io": ~5.0.0
+    "@pm2/io": ~6.0.0
     "@pm2/js-api": ~0.8.0
     "@pm2/pm2-version-check": latest
     async: ~3.2.0
@@ -4543,6 +4469,7 @@ fsevents@~2.1.1:
     enquirer: 2.3.6
     eventemitter2: 5.0.1
     fclone: 1.0.11
+    js-yaml: ~4.1.0
     mkdirp: 1.0.4
     needle: 2.4.0
     pidusage: ~3.0
@@ -4556,7 +4483,6 @@ fsevents@~2.1.1:
     source-map-support: 0.5.21
     sprintf-js: 1.1.2
     vizion: ~2.2.1
-    yamljs: 0.3.0
   dependenciesMeta:
     pm2-sysmonit:
       optional: true
@@ -4565,7 +4491,7 @@ fsevents@~2.1.1:
     pm2-dev: bin/pm2-dev
     pm2-docker: bin/pm2-docker
     pm2-runtime: bin/pm2-runtime
-  checksum: ee0fd4a9b9559e5409abd83dc4c04cf546c927b8dcd108588d735d4b2af5471231a851ba2cbbc96d444719bee9fae1b6fd6cefb622d166c1ec4902ca363d297a
+  checksum: e456e90720e345f2534b1ed969913c9d8c471f6fe5ec7bb8cb678bf3b27a4430974c6b93efb0c61f18bb6db6c7f8e9f811e55a19c7c82c46b6e02be71c337d89
   languageName: node
   linkType: hard
 
@@ -5071,30 +4997,21 @@ resolve@^1.22.4:
   languageName: node
   linkType: hard
 
-"semver@npm:6.3.0, semver@npm:^6.3.0":
-  version: 6.3.0
-  resolution: "semver@npm:6.3.0"
-  bin:
-    semver: ./bin/semver.js
-  checksum: f0d155c06a67cc7e500c92d929339f1c6efd4ce9fe398aee6acc00a2333489cca0f5b4e76ee7292beba237fcca4b5a3d4a6153471f105f56299801bdab37289f
-  languageName: node
-  linkType: hard
-
-"semver@npm:^5.3.0, semver@npm:^5.5.0":
-  version: 5.6.0
-  resolution: "semver@npm:5.6.0"
-  bin:
-    semver: ./bin/semver
-  checksum: 7e7b2f9a72b5ad7e123c28ba44398cad73e55b2ecb8634cf7ef9d4bb3d93ffab5315a0cb505f2f735edebc381fc689bd2bf3e952f8318cdfc88947e99898bf69
-  languageName: node
-  linkType: hard
-
 "semver@npm:^5.7.0":
   version: 5.7.1
   resolution: "semver@npm:5.7.1"
   bin:
     semver: ./bin/semver
   checksum: 06ff0ed753ebf741b7602be8faad620d6e160a2cb3f61019d00d919c8bca141638aa23c34da779b8595afdc9faa3678bfbb5f60366b6a4f65f98cf86605bbcdb
+  languageName: node
+  linkType: hard
+
+"semver@npm:^6.3.0":
+  version: 6.3.0
+  resolution: "semver@npm:6.3.0"
+  bin:
+    semver: ./bin/semver.js
+  checksum: f0d155c06a67cc7e500c92d929339f1c6efd4ce9fe398aee6acc00a2333489cca0f5b4e76ee7292beba237fcca4b5a3d4a6153471f105f56299801bdab37289f
   languageName: node
   linkType: hard
 
@@ -5138,7 +5055,7 @@ resolve@^1.22.4:
   languageName: node
   linkType: hard
 
-"semver@npm:^7.5.3":
+"semver@npm:^7.5.3, semver@npm:~7.5.4":
   version: 7.5.4
   resolution: "semver@npm:7.5.4"
   dependencies:
@@ -5251,7 +5168,7 @@ resolve@^1.22.4:
   languageName: node
   linkType: hard
 
-"shimmer@npm:^1.1.0, shimmer@npm:^1.2.0":
+"shimmer@npm:^1.2.0":
   version: 1.2.0
   resolution: "shimmer@npm:1.2.0"
   checksum: 8e860b053354733321b8b7f86f183d7336a904c65d993af4406fe183c8f1c7c926e60558043c2da3ed0ae62f75bb6390113e40d1e9a9b9fe5be07e1d3672bfcb
@@ -6043,15 +5960,6 @@ resolve@^1.22.4:
   languageName: node
   linkType: hard
 
-"uuid@npm:^3.2.1":
-  version: 3.3.2
-  resolution: "uuid@npm:3.3.2"
-  bin:
-    uuid: ./bin/uuid
-  checksum: f407d974ca30b20bfbd32ae9cc05d20e18df5fd9e5fa088d91db04a6597125dcc8d09eeeb7237782724daba36418e24f557e0245e6ce7b8e4ad25d6436f1cde1
-  languageName: node
-  linkType: hard
-
 "uuid@npm:^3.3.2":
   version: 3.4.0
   resolution: "uuid@npm:3.4.0"
@@ -6260,19 +6168,6 @@ resolve@^1.22.4:
   version: 4.0.0
   resolution: "yallist@npm:4.0.0"
   checksum: a2960ef879af6ee67a76cae29bac9d8bffeb6e9e366c217dbd21464e7fce071933705544724f47e90ba5209cf9c83c17d5582dd04415d86747a826b2a231efb8
-  languageName: node
-  linkType: hard
-
-"yamljs@npm:0.3.0":
-  version: 0.3.0
-  resolution: "yamljs@npm:0.3.0"
-  dependencies:
-    argparse: ^1.0.7
-    glob: ^7.0.5
-  bin:
-    json2yaml: ./bin/json2yaml
-    yaml2json: ./bin/yaml2json
-  checksum: 3ee0f59843b8626d81b8d4919f0f36d6a35d5d0eb1a11ef471593a30a7c579b8b7df9f013809d3d60e37d4084f0db313a1c663ad4bd6e5f343017ad350c6b234
   languageName: node
   linkType: hard
 
