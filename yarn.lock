@@ -1138,10 +1138,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"csv-stringify@npm:^6.5.1":
-  version: 6.5.1
-  resolution: "csv-stringify@npm:6.5.1"
-  checksum: 026f877000c5e50350e2c4efb6f820e3d2fb6778205f320fc6a338e186d4a8d07d5f1dcbd35b48cf5f0635552af4d34f9311bc5cfa9157c9dda809f94c8da2f3
+"csv-stringify@npm:^6.5.2":
+  version: 6.5.2
+  resolution: "csv-stringify@npm:6.5.2"
+  checksum: cf53036b3137f059b6b0ae246c9c16762fb10f8182eb0d471bbf379dcfb4e623a87f40a2eeb3719b0d9eaaa05cf12650c820fb4a977afd251319154da5f3a019
   languageName: node
   linkType: hard
 
@@ -1949,9 +1949,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"express@npm:^4.21.1":
-  version: 4.21.1
-  resolution: "express@npm:4.21.1"
+"express@npm:^4.21.2":
+  version: 4.21.2
+  resolution: "express@npm:4.21.2"
   dependencies:
     accepts: ~1.3.8
     array-flatten: 1.1.1
@@ -1972,7 +1972,7 @@ __metadata:
     methods: ~1.1.2
     on-finished: 2.4.1
     parseurl: ~1.3.3
-    path-to-regexp: 0.1.10
+    path-to-regexp: 0.1.12
     proxy-addr: ~2.0.7
     qs: 6.13.0
     range-parser: ~1.2.1
@@ -1984,7 +1984,7 @@ __metadata:
     type-is: ~1.6.18
     utils-merge: 1.0.1
     vary: ~1.1.2
-  checksum: 11f9fc8351058b225a823e7d1a13bdde26eaead401e5b1cbac827598c468a45c652d756849edcdf636c29601dd8cb14977deac0890c9e194eacd934b3704336f
+  checksum: 92b22d83ea32a11d95893915796b2316c40299dbade2c898f330f7ae73a9f3a4953f5b78e4aff438a1933572a4f63324181b47381e8e3fc388e1379e8478c362
   languageName: node
   linkType: hard
 
@@ -3863,19 +3863,19 @@ fsevents@~2.1.1:
   version: 0.0.0-use.local
   resolution: "neo-query.git@workspace:."
   dependencies:
-    csv-stringify: ^6.5.1
+    csv-stringify: ^6.5.2
     eslint: ^8.57.0
     eslint-config-airbnb-base: ^15.0.0
     eslint-config-prettier: ^9.1.0
     eslint-plugin-import: ^2.29.1
     eslint-plugin-prettier: ^5.1.3
-    express: ^4.21.1
+    express: ^4.21.2
     moment: ^2.30.1
     node-fetch: ^3.3.2
-    nodemon: ^3.1.7
-    playwright: ^1.48.0
-    pm2: ^5.4.2
-    prettier: 3.3.3
+    nodemon: ^3.1.9
+    playwright: ^1.51.0
+    pm2: ^5.4.3
+    prettier: 3.5.3
     sqlite: ^5.1.1
     sqlite3: ^5.1.7
   languageName: unknown
@@ -3974,9 +3974,9 @@ fsevents@~2.1.1:
   languageName: node
   linkType: hard
 
-"nodemon@npm:^3.1.7":
-  version: 3.1.7
-  resolution: "nodemon@npm:3.1.7"
+"nodemon@npm:^3.1.9":
+  version: 3.1.9
+  resolution: "nodemon@npm:3.1.9"
   dependencies:
     chokidar: ^3.5.2
     debug: ^4
@@ -3990,7 +3990,7 @@ fsevents@~2.1.1:
     undefsafe: ^2.0.5
   bin:
     nodemon: bin/nodemon.js
-  checksum: 1a418aa46fd255077a78a874a983cb197818fb03a00bba6b2ce538bab3fa6d7ce0098f82236546673edf8be91102262b10ad0629a9cfd6af30161b135bd2bb66
+  checksum: 8585d2ae877b8fd9fce3761d57e310ed8addd5e520be4365280ee2c50ddd003efe17095c8f443fd2fed657e704236eb8a5ac42679615e73bd51052e276b79495
   languageName: node
   linkType: hard
 
@@ -4395,10 +4395,10 @@ fsevents@~2.1.1:
   languageName: node
   linkType: hard
 
-"path-to-regexp@npm:0.1.10":
-  version: 0.1.10
-  resolution: "path-to-regexp@npm:0.1.10"
-  checksum: 9640e2ef408cb6312299d071446d65be8a2a28d887eab4321ee29942444816003e06bfac93895e0c1684ae9d3f9a849b3ac2e299ba926d7bef0d975ffc65abc4
+"path-to-regexp@npm:0.1.12":
+  version: 0.1.12
+  resolution: "path-to-regexp@npm:0.1.12"
+  checksum: b97b84bc9932837f79a355cbabf8e9f9ebcf6b4016cd02e7f4971209c1f6552a9a5131bd1adde118e0d1435771a29701100ca8ff323ac00a805f474b59fba136
   languageName: node
   linkType: hard
 
@@ -4441,27 +4441,27 @@ fsevents@~2.1.1:
   languageName: node
   linkType: hard
 
-"playwright-core@npm:1.48.0":
-  version: 1.48.0
-  resolution: "playwright-core@npm:1.48.0"
+"playwright-core@npm:1.51.0":
+  version: 1.51.0
+  resolution: "playwright-core@npm:1.51.0"
   bin:
     playwright-core: cli.js
-  checksum: d3bfe91e359d7d1092a47e43dee40628bd688c81ffcf4b1efb2a4753d5c294953e61bb70f9c87ef035e5b5aa83274298a688e7a4d5d484456d3252bdf1eb3457
+  checksum: 882ad98f5b790c3e3445d78c8ae41b939022e403c9a40913dadfda5724fd749bd4a0ab96d4b4a385506abaafa22036fb1cc77f9ff6b32f9d2d1289cf11eccea9
   languageName: node
   linkType: hard
 
-"playwright@npm:^1.48.0":
-  version: 1.48.0
-  resolution: "playwright@npm:1.48.0"
+"playwright@npm:^1.51.0":
+  version: 1.51.0
+  resolution: "playwright@npm:1.51.0"
   dependencies:
     fsevents: 2.3.2
-    playwright-core: 1.48.0
+    playwright-core: 1.51.0
   dependenciesMeta:
     fsevents:
       optional: true
   bin:
     playwright: cli.js
-  checksum: 33fb2e0a35f3596d157e41a8ad8612bdadc3e29ce43b5f8865bc892cba40b32c473f62ecc8b6c8ef183b3ec476afe2802eeee84af7e231faa8f928aabf3a09e5
+  checksum: 2212bab8fd51e255448bde4a0279a0a36f6dd7e4ee0a2f834e014a28331d29b1de1a75599608b09614480fccd6d4b67010a74849633f5815edaded065ed894e6
   languageName: node
   linkType: hard
 
@@ -4518,9 +4518,9 @@ fsevents@~2.1.1:
   languageName: node
   linkType: hard
 
-"pm2@npm:^5.4.2":
-  version: 5.4.2
-  resolution: "pm2@npm:5.4.2"
+"pm2@npm:^5.4.3":
+  version: 5.4.3
+  resolution: "pm2@npm:5.4.3"
   dependencies:
     "@pm2/agent": ~2.0.0
     "@pm2/io": ~6.0.1
@@ -4560,7 +4560,7 @@ fsevents@~2.1.1:
     pm2-dev: bin/pm2-dev
     pm2-docker: bin/pm2-docker
     pm2-runtime: bin/pm2-runtime
-  checksum: d3bc7948428acbe53847bd6986d6caf9a9fa4267cc64d89614445a1695a612f12fad2f6dcc31f9ec9b668e1acd4452ef380879cf6d6a935febff08af9efb73a5
+  checksum: 6b53fb0d2f573c6af770f3af62994534c814fcde565e8b7a0a90b94f2a0d0471cacc572269f36c2591808d34d2fc07c3fb9722fcf0238178c8e552082cb33959
   languageName: node
   linkType: hard
 
@@ -4609,12 +4609,12 @@ fsevents@~2.1.1:
   languageName: node
   linkType: hard
 
-"prettier@npm:3.3.3":
-  version: 3.3.3
-  resolution: "prettier@npm:3.3.3"
+"prettier@npm:3.5.3":
+  version: 3.5.3
+  resolution: "prettier@npm:3.5.3"
   bin:
     prettier: bin/prettier.cjs
-  checksum: 8b9a808bf8f52c30c2f9ac47c85ad5b68e73f5d9a1554537f9c70dc1fac4af13be3532348fdb4aa280bf3cf681413553fda3827679e1b871a68b804fb1a4d5fe
+  checksum: 9eb644fed2c47cbd58981e458049e45b454e25edf5e36adbe48027e41e5b708ee4ad42569c074307a70dca61b516cd4bb19c00e26406e82da7bd47fb5ff47f28
   languageName: node
   linkType: hard
 
