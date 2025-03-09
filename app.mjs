@@ -15,7 +15,6 @@ app.use('/app/sparkline', sparkline);
 app.use('/app/update', update);
 
 app.use((err, req, res, next) => {
-  // eslint-disable-next-line no-console
   console.error(err.stack);
   if (res.headersSent) {
     next(err);
@@ -27,7 +26,6 @@ app.use((err, req, res, next) => {
 
 async function main() {
   startup()
-    // eslint-disable-next-line no-console
     .catch((err) => console.error(err.stack))
     .finally(() => app.listen(port));
 }

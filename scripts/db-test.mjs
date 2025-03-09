@@ -3,9 +3,7 @@
 import { startup, sqlite } from '../lib/db.mjs';
 
 async function f() {
-  await startup()
-    // eslint-disable-next-line no-console
-    .catch((err) => console.error(err.stack));
+  await startup().catch((err) => console.error(err.stack));
 
   sqlite()
     .all(
@@ -18,7 +16,7 @@ async function f() {
       '%w',
       '1' // only want Mondays
     )
-    // eslint-disable-next-line no-console
+
     .then((rows) => console.dir(rows));
 }
 f();

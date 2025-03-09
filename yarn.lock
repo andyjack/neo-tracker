@@ -960,13 +960,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"confusing-browser-globals@npm:^1.0.10":
-  version: 1.0.11
-  resolution: "confusing-browser-globals@npm:1.0.11"
-  checksum: 8b241444e01f25685c7f38b0add379a9b81a597044ece44421049515d12e953531a0fd936f366f937bef990ff11caea26b5e56120bd2a43af158f773109c996c
-  languageName: node
-  linkType: hard
-
 "console-control-strings@npm:^1.1.0":
   version: 1.1.0
   resolution: "console-control-strings@npm:1.1.0"
@@ -1469,21 +1462,6 @@ __metadata:
     escodegen: bin/escodegen.js
     esgenerate: bin/esgenerate.js
   checksum: d961e9b3dc53e48f1a72c7a0f1b005964e4d7e394c697eaaf9aabf6d0dcdabbaf4b5d98f1328099e3076fbcab3ca34d8867da6091f6b14fded50c4bf1ad883c0
-  languageName: node
-  linkType: hard
-
-"eslint-config-airbnb-base@npm:^15.0.0":
-  version: 15.0.0
-  resolution: "eslint-config-airbnb-base@npm:15.0.0"
-  dependencies:
-    confusing-browser-globals: ^1.0.10
-    object.assign: ^4.1.2
-    object.entries: ^1.1.5
-    semver: ^6.3.0
-  peerDependencies:
-    eslint: ^7.32.0 || ^8.2.0
-    eslint-plugin-import: ^2.25.2
-  checksum: 87b6b29939fce628c83893625143330c8989c5a827993dc2cdeb5356ecc7441534b01cd68410b0f2492e75f922a01017e637feacbc4bbb3e73bc5ae22ca32c72
   languageName: node
   linkType: hard
 
@@ -3275,7 +3253,6 @@ fsevents@~2.3.2:
     "@eslint/js": ^9.22.0
     csv-stringify: ^6.5.2
     eslint: ^9.22.0
-    eslint-config-airbnb-base: ^15.0.0
     eslint-config-prettier: ^10.1.1
     eslint-plugin-import: ^2.31.0
     eslint-plugin-prettier: ^5.2.3
@@ -3460,7 +3437,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"object.assign@npm:^4.1.2, object.assign@npm:^4.1.7":
+"object.assign@npm:^4.1.7":
   version: 4.1.7
   resolution: "object.assign@npm:4.1.7"
   dependencies:
@@ -3471,17 +3448,6 @@ fsevents@~2.3.2:
     has-symbols: ^1.1.0
     object-keys: ^1.1.1
   checksum: 957507142a40a4b50931205b1fcd55f57a370941af7208c1a01ac4dd5e1b119f85be7832379cc169c61e7b3e5e4785cf0d1f0fef0b080522a04ee574817a9945
-  languageName: node
-  linkType: hard
-
-"object.entries@npm:^1.1.5":
-  version: 1.1.8
-  resolution: "object.entries@npm:1.1.8"
-  dependencies:
-    call-bind: ^1.0.7
-    define-properties: ^1.2.1
-    es-object-atoms: ^1.0.0
-  checksum: b68a29af6368d06d1ed8a405660c208016fba1bd0c8b185248aea51abf36e14036b467349372d7297b30dcff0fce3fa6384c5d027af5196c6d511ab412da6957
   languageName: node
   linkType: hard
 
@@ -4226,7 +4192,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"semver@npm:^6.3.0, semver@npm:^6.3.1":
+"semver@npm:^6.3.1":
   version: 6.3.1
   resolution: "semver@npm:6.3.1"
   bin:
