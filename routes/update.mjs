@@ -55,13 +55,11 @@ router.post('/current', async (req, res, next) => {
               }
               const logtime = moment().format('YYYY-MM-DD HH:MM:SS');
               if (p.err) {
-                // eslint-disable-next-line no-console
                 console.log(
                   `${logtime} got ${p.err} fetching current price for ${p.symbol}`
                 );
               }
               if (!p.price) {
-                // eslint-disable-next-line no-console
                 console.log(
                   `${logtime} did not get a price for ${p.symbol} [${p.price}]`
                 );
