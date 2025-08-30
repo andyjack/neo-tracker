@@ -89,12 +89,11 @@ server {
 	location @error405 {
 	    add_header Allow "GET, POST, HEAD" always;
 	}
-	if ( $request_method !~ ^(GET|POST|HEAD)$ ) {
-	    return 405;
-	} 
-
 	# for the app.  Andy 2017-Mar-05 
 	location /app {
+		if ( $request_method !~ ^(GET|POST|HEAD)$ ) {
+		    return 405;
+		}
 		proxy_pass http://localhost:3000;
 		proxy_http_version 1.1;
 		proxy_set_header Upgrade $http_upgrade;
