@@ -53,7 +53,7 @@ router.post('/current', async (req, res, next) => {
               if (!p.err && p.price) {
                 return sth.run(p.stock_id, p.price, p.date);
               }
-              const logtime = moment().format('YYYY-MM-DD HH:MM:SS');
+              const logtime = moment().format('YYYY-MM-DD HH:mm:ss');
               if (p.err) {
                 console.log(
                   `${logtime} got ${p.err} fetching current price for ${p.symbol}`
